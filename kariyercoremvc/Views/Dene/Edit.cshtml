@@ -1,0 +1,49 @@
+﻿@model kariyercoremvc.Models.Deneyim
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Deneyim</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DeneyimId" />
+            <div class="form-group">
+                <label asp-for="BSId" class="control-label"></label>
+                <input asp-for="BSId" class="form-control" />
+                <span asp-validation-for="BSId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirmaAdlari" class="control-label"></label>
+                <input asp-for="FirmaAdlari" class="form-control" />
+                <span asp-validation-for="FirmaAdlari" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CalismaTanimi" class="control-label"></label>
+                <input asp-for="CalismaTanimi" class="form-control" />
+                <span asp-validation-for="CalismaTanimi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CalismaYili" class="control-label"></label>
+                <input asp-for="CalismaYili" class="form-control" />
+                <span asp-validation-for="CalismaYili" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
